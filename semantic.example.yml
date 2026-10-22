@@ -1,0 +1,28 @@
+# Copy to semantic.yml and set SEMANTIC_FILE=semantic.yml.
+# Optional, but it is the single biggest accuracy boost for an SQL agent:
+# the agent reads definitions instead of guessing what "revenue" means.
+tables:
+  fct_transactions:
+    description: One row per order line. Hub table.
+    columns:
+      revenue: quantity * price, in currency units of the source system
+      city: store city of the transaction (not the user's home city)
+  dim_users:
+    description: One row per user.
+  dim_products:
+    description: One row per product.
+  fct_promotions:
+    description: Promo spend per product per day. MANY rows per product.
+
+joins:
+  - fct_transactions.user_id = dim_users.user_id
+  - fct_transactions.product_id = dim_products.product_id
+  - fct_promotions.product_id = dim_products.product_id
+
+metrics:
+  total_revenue: SUM(fct_transactions.revenue)
+  total_promo_cost: SUM(fct_promotions.promo_cost)
+
+notes:
+  - fct_promotions has many rows per product. Never join it to fct_transactions before aggregating; aggregate each side in its own CTE, then join on product_id.
+  - "city" means dim_users.city unless the question says "store city".

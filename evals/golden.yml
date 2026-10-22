@@ -1,0 +1,47 @@
+# Golden questions for the synthetic fintech dataset. reference_sql is the answer key.
+# Compare is order-insensitive and rounds numbers to 2 decimals. Ask for fractions (0-1), not percentages.
+cases:
+  - question: "Total disbursed principal by product name, highest first"
+    reference_sql: |
+      select p.product_name, sum(l.principal) as total_principal
+      from fct_loans l join dim_products p using (product_id)
+      group by 1 order by 2 desc
+  - question: "Approval rate by product name as a fraction between 0 and 1"
+    reference_sql: |
+      select p.product_name, avg((a.decision = 'approved')::int)::numeric as approval_rate
+      from fct_applications a join dim_products p using (product_id)
+      group by 1
+  - question: "How many loans are NPL 90+ for each risk grade?"
+    reference_sql: |
+      select risk_grade, count(*) filter (where is_npl90) as npl_loans
+      from fct_loans group by 1
+  - question: "Share of loans that are NPL 90+ by acquisition channel, as a fraction between 0 and 1"
+    reference_sql: |
+      select acquisition_channel, avg(is_npl90::int)::numeric as npl90_ratio
+      from fct_loans group by 1
+  - question: "Top 5 cities by total disbursed principal"
+    reference_sql: |
+      select c.city, sum(l.principal) as total_principal
+      from fct_loans l join dim_customers c using (customer_id)
+      group by 1 order by 2 desc limit 5
+  - question: "Monthly disbursed principal during 2026"
+    reference_sql: |
+      select disbursement_month, sum(principal) as total_principal
+      from fct_loans where disbursement_month >= '2026-01-01'
+      group by 1
+  - question: "Total late fees collected by payment channel"
+    reference_sql: |
+      select payment_channel, sum(late_fee) as total_late_fees
+      from fct_payments group by 1
+  - question: "Share of rejected applications by reject reason, as a fraction between 0 and 1"
+    reference_sql: |
+      select reject_reason, (count(*)::numeric / sum(count(*)) over ()) as share
+      from fct_applications where decision = 'rejected' group by 1
+  - question: "How many installments are in each DPD bucket among overdue installments?"
+    reference_sql: |
+      select dpd_bucket, count(*) as installments
+      from fct_installments where status = 'overdue' group by 1
+  - question: "Average outstanding principal of active loans (not closed) by loan status"
+    reference_sql: |
+      select loan_status, avg(outstanding_principal)::numeric as avg_outstanding
+      from fct_loans where loan_status <> 'closed' group by 1

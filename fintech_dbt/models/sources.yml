@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: raw_products
+      - name: raw_customers
+      - name: raw_applications
+      - name: raw_loans
+      - name: raw_installments
+      - name: raw_payments

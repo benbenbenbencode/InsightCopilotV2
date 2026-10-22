@@ -1,0 +1,18 @@
+name: fintech_dbt
+version: '1.0.0'
+config-version: 2
+profile: fintech_dbt
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Snapshot date of the data. Must match --asof used in generate.py.
+  as_of_date: '2026-09-30'
+
+models:
+  fintech_dbt:
+    marts:
+      +materialized: table
+      +grants:
+        select: ['ic_readonly']

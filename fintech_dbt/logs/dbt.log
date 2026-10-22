@@ -1,0 +1,1921 @@
+[0m19:42:46.340611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233E632D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233E3F4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233E62950>]}
+
+
+============================== 19:42:46.344612 | 3065b480-f79c-404c-a0cf-6b28d73b5a21 ==============================
+[0m19:42:46.344612 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m19:42:46.345113 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\BEN\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'log_path': 'C:\\Playground\\Python\\InsightCopilot-v2\\fintech_dbt\\logs'}
+[0m19:42:46.345612 [debug] [MainThread]: Tracking: tracking
+[0m19:42:46.467788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233FF3E50>]}
+[0m19:42:46.497367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002222F598110>]}
+[0m19:42:46.498369 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:42:46.619086 [debug] [MainThread]: checksum: 269185b64a7be3db4b938454a745305dc16efb842066a47ce48fa4b30124e10c, vars: {}, profile: fintech_dbt, target: dev, version: 1.13.0b1
+[0m19:42:46.619588 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:42:46.620089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000222321C9250>]}
+[0m19:42:47.800388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223446EE50>]}
+[0m19:42:47.852495 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\manifest.json
+[0m19:42:47.867792 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\semantic_manifest.json
+[0m19:42:47.888838 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\osi_document.json
+[0m19:42:47.898855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234740290>]}
+[0m19:42:47.899356 [info ] [MainThread]: Found 7 models, 22 data tests, 6 sources, 477 macros
+[0m19:42:47.899356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233D801D0>]}
+[0m19:42:47.900854 [info ] [MainThread]: 
+[0m19:42:47.900854 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m19:42:47.901859 [info ] [MainThread]: 
+[0m19:42:47.901859 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:42:47.904863 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m19:42:49.145648 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m19:42:49.146655 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:42:49.147164 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:42:54.869308 [debug] [ThreadPool]: SQL status: SELECT 13 in 5.722 seconds
+[0m19:42:54.870311 [debug] [ThreadPool]: On list_postgres: Close
+[0m19:42:54.871811 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public'
+[0m19:42:54.874808 [debug] [ThreadPool]: Using postgres connection "list_postgres_public"
+[0m19:42:54.875311 [debug] [ThreadPool]: On list_postgres_public: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "connection_name": "list_postgres_public"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public'
+  
+[0m19:42:54.875311 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:43:00.370108 [debug] [ThreadPool]: SQL status: SELECT 0 in 5.495 seconds
+[0m19:43:00.371609 [debug] [ThreadPool]: On list_postgres_public: ROLLBACK
+[0m19:43:00.801296 [debug] [ThreadPool]: On list_postgres_public: Close
+[0m19:43:00.804300 [debug] [MainThread]: Using postgres connection "master"
+[0m19:43:00.804801 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:43:00.805301 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:43:06.213985 [debug] [MainThread]: SQL status: SELECT 1 in 5.409 seconds
+[0m19:43:06.215485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234A04250>]}
+[0m19:43:06.215485 [debug] [MainThread]: On master: ROLLBACK
+[0m19:43:06.475838 [debug] [MainThread]: On master: COMMIT
+[0m19:43:06.476338 [debug] [MainThread]: Using postgres connection "master"
+[0m19:43:06.476338 [debug] [MainThread]: On master: COMMIT
+[0m19:43:07.930218 [debug] [MainThread]: SQL status: COMMIT in 1.453 seconds
+[0m19:43:07.930720 [debug] [MainThread]: On master: Close
+[0m19:43:07.948431 [debug] [Thread-1 (]: Began running node model.fintech_dbt.dim_customers
+[0m19:43:07.948930 [debug] [Thread-2 (]: Began running node model.fintech_dbt.dim_date
+[0m19:43:07.949433 [info ] [Thread-1 (]: 1 of 7 START sql table model public.dim_customers .............................. [RUN]
+[0m19:43:07.949433 [info ] [Thread-2 (]: 2 of 7 START sql table model public.dim_date ................................... [RUN]
+[0m19:43:07.949931 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.fintech_dbt.dim_customers'
+[0m19:43:07.950430 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.fintech_dbt.dim_date'
+[0m19:43:07.950430 [debug] [Thread-1 (]: Began compiling node model.fintech_dbt.dim_customers
+[0m19:43:07.950430 [debug] [Thread-2 (]: Began compiling node model.fintech_dbt.dim_date
+[0m19:43:07.954949 [debug] [Thread-1 (]: Writing injected SQL for node "model.fintech_dbt.dim_customers"
+[0m19:43:07.955446 [debug] [Thread-2 (]: Writing injected SQL for node "model.fintech_dbt.dim_date"
+[0m19:43:07.957448 [debug] [Thread-1 (]: Began executing node model.fintech_dbt.dim_customers
+[0m19:43:07.957448 [debug] [Thread-2 (]: Began executing node model.fintech_dbt.dim_date
+[0m19:43:07.975473 [debug] [Thread-1 (]: Writing runtime sql for node "model.fintech_dbt.dim_customers"
+[0m19:43:07.976470 [debug] [Thread-2 (]: Writing runtime sql for node "model.fintech_dbt.dim_date"
+[0m19:43:07.978982 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.dim_customers"
+[0m19:43:07.978982 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_customers"} */
+
+  
+    
+
+  create  table "postgres"."public"."dim_customers__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    customer_id,
+    signup_date,
+    ('2026-09-30'::date - signup_date)                              as tenure_days,
+    birth_year,
+    extract(year from '2026-09-30'::date)::int - birth_year         as age,
+    case
+        when extract(year from '2026-09-30'::date)::int - birth_year < 25 then '<25'
+        when extract(year from '2026-09-30'::date)::int - birth_year < 35 then '25-34'
+        when extract(year from '2026-09-30'::date)::int - birth_year < 45 then '35-44'
+        else '45+'
+    end                                                      as age_band,
+    gender,
+    city,
+    province,
+    employment_type,
+    monthly_income,
+    case
+        when monthly_income <  5000000 then '<5M'
+        when monthly_income < 10000000 then '5-10M'
+        when monthly_income < 20000000 then '10-20M'
+        else '20M+'
+    end                                                      as income_band,
+    acquisition_channel,
+    device_os,
+    kyc_verified
+from "postgres"."raw"."raw_customers"
+  );
+  
+[0m19:43:07.979480 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_date"
+[0m19:43:07.979480 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:43:07.979980 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_date"} */
+
+  
+    
+
+  create  table "postgres"."public"."dim_date__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- One row per calendar day 2023-2027.
+select
+    d::date                                   as date_day,
+    extract(year from d)::int                 as year,
+    extract(quarter from d)::int              as quarter,
+    extract(month from d)::int                as month,
+    to_char(d, 'YYYY-MM')                     as year_month,
+    to_char(d, 'Mon')                         as month_name,
+    date_trunc('month', d)::date              as month_start,
+    date_trunc('week', d)::date               as week_start,
+    extract(isodow from d)::int               as day_of_week,   -- 1 = Monday
+    extract(isodow from d) in (6, 7)          as is_weekend
+from generate_series('2023-01-01'::date, '2027-12-31'::date, interval '1 day') as d
+  );
+  
+[0m19:43:07.980479 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m19:43:14.443220 [debug] [Thread-2 (]: SQL status: SELECT 1826 in 6.463 seconds
+[0m19:43:14.448729 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_date"
+[0m19:43:14.449228 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_date"} */
+alter table "postgres"."public"."dim_date__dbt_tmp" rename to "dim_date"
+[0m19:43:14.754180 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.305 seconds
+[0m19:43:14.766691 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_date"
+[0m19:43:14.766691 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_date"} */
+
+        
+            grant select on "postgres"."public"."dim_date" to ic_readonly;
+        
+    
+[0m19:43:15.987935 [debug] [Thread-2 (]: SQL status: GRANT in 1.221 seconds
+[0m19:43:15.992439 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: COMMIT
+[0m19:43:15.992940 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_date"
+[0m19:43:15.993439 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: COMMIT
+[0m19:43:16.255217 [debug] [Thread-2 (]: SQL status: COMMIT in 0.261 seconds
+[0m19:43:16.258725 [debug] [Thread-2 (]: Applying DROP to: "postgres"."public"."dim_date__dbt_backup"
+[0m19:43:16.261230 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_date"
+[0m19:43:16.261730 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_date"} */
+drop table if exists "postgres"."public"."dim_date__dbt_backup" cascade
+[0m19:43:16.523489 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.262 seconds
+[0m19:43:16.524989 [debug] [Thread-2 (]: On model.fintech_dbt.dim_date: Close
+[0m19:43:16.526490 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234D2BC10>]}
+[0m19:43:16.527494 [info ] [Thread-2 (]: 2 of 7 OK created sql table model public.dim_date .............................. [[32mSELECT 1826[0m in 8.58s]
+[0m19:43:16.528000 [debug] [Thread-2 (]: Finished running node model.fintech_dbt.dim_date
+[0m19:43:16.528499 [debug] [Thread-2 (]: Began running node model.fintech_dbt.dim_products
+[0m19:43:16.529002 [info ] [Thread-2 (]: 3 of 7 START sql table model public.dim_products ............................... [RUN]
+[0m19:43:16.529502 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.fintech_dbt.dim_date, now model.fintech_dbt.dim_products)
+[0m19:43:16.529502 [debug] [Thread-2 (]: Began compiling node model.fintech_dbt.dim_products
+[0m19:43:16.530999 [debug] [Thread-2 (]: Writing injected SQL for node "model.fintech_dbt.dim_products"
+[0m19:43:16.531500 [debug] [Thread-2 (]: Began executing node model.fintech_dbt.dim_products
+[0m19:43:16.532999 [debug] [Thread-2 (]: Writing runtime sql for node "model.fintech_dbt.dim_products"
+[0m19:43:16.547561 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_products"
+[0m19:43:16.547561 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_products"} */
+
+  
+    
+
+  create  table "postgres"."public"."dim_products__dbt_tmp"
+  
+  
+    as
+  
+  (
+    select
+    product_id,
+    product_name,
+    product_type,
+    min_amount,
+    max_amount,
+    tenor_options
+from "postgres"."raw"."raw_products"
+  );
+  
+[0m19:43:16.548067 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:43:19.150926 [debug] [Thread-1 (]: SQL status: SELECT 40000 in 11.171 seconds
+[0m19:43:19.152931 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.dim_customers"
+[0m19:43:19.153430 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_customers"} */
+alter table "postgres"."public"."dim_customers__dbt_tmp" rename to "dim_customers"
+[0m19:43:19.578393 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.425 seconds
+[0m19:43:19.579900 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.dim_customers"
+[0m19:43:19.580398 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_customers"} */
+
+        
+            grant select on "postgres"."public"."dim_customers" to ic_readonly;
+        
+    
+[0m19:43:20.095702 [debug] [Thread-1 (]: SQL status: GRANT in 0.515 seconds
+[0m19:43:20.096703 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: COMMIT
+[0m19:43:20.096703 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.dim_customers"
+[0m19:43:20.096703 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: COMMIT
+[0m19:43:20.970657 [debug] [Thread-1 (]: SQL status: COMMIT in 0.873 seconds
+[0m19:43:20.972157 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public"."dim_customers__dbt_backup"
+[0m19:43:20.972657 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.dim_customers"
+[0m19:43:20.973158 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_customers"} */
+drop table if exists "postgres"."public"."dim_customers__dbt_backup" cascade
+[0m19:43:21.256874 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.284 seconds
+[0m19:43:21.258381 [debug] [Thread-1 (]: On model.fintech_dbt.dim_customers: Close
+[0m19:43:21.258882 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234CC1F90>]}
+[0m19:43:21.259386 [info ] [Thread-1 (]: 1 of 7 OK created sql table model public.dim_customers ......................... [[32mSELECT 40000[0m in 13.31s]
+[0m19:43:21.259887 [debug] [Thread-1 (]: Finished running node model.fintech_dbt.dim_customers
+[0m19:43:21.260386 [debug] [Thread-1 (]: Began running node model.fintech_dbt.fct_applications
+[0m19:43:21.260888 [info ] [Thread-1 (]: 4 of 7 START sql table model public.fct_applications ........................... [RUN]
+[0m19:43:21.261389 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.fintech_dbt.dim_customers, now model.fintech_dbt.fct_applications)
+[0m19:43:21.261389 [debug] [Thread-1 (]: Began compiling node model.fintech_dbt.fct_applications
+[0m19:43:21.263385 [debug] [Thread-1 (]: Writing injected SQL for node "model.fintech_dbt.fct_applications"
+[0m19:43:21.264386 [debug] [Thread-1 (]: Began executing node model.fintech_dbt.fct_applications
+[0m19:43:21.265887 [debug] [Thread-1 (]: Writing runtime sql for node "model.fintech_dbt.fct_applications"
+[0m19:43:21.266388 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:21.266388 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_applications"} */
+
+  
+    
+
+  create  table "postgres"."public"."fct_applications__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+-- Grain: one row per loan application (approved AND rejected). Use for funnel / approval analysis.
+
+select
+    a.application_id,
+    a.customer_id,
+    a.application_date,
+    date_trunc('month', a.application_date)::date            as application_month,
+    a.product_id,
+    a.requested_amount,
+    a.approved_amount,
+    a.decision,                                              -- approved | rejected
+    a.reject_reason,                                         -- null when approved
+    a.credit_score,
+    a.risk_grade,                                            -- A (best) .. E (worst)
+    a.accepted_by_customer,
+    l.loan_id,                                               -- null if not disbursed
+    (l.loan_id is not null)                                  as is_disbursed,
+    (l.disbursement_date - a.application_date)               as days_to_disburse
+from "postgres"."raw"."raw_applications" a
+left join "postgres"."raw"."raw_loans" l using (application_id)
+  );
+  
+[0m19:43:21.267392 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:27.520455 [debug] [Thread-1 (]: SQL status: SELECT 87277 in 6.253 seconds
+[0m19:43:27.527960 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:27.528467 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_applications"} */
+
+    create  index if not exists
+  "0e664da99d64516ea03f0d430e57a290"
+  on "postgres"."public"."fct_applications__dbt_tmp" 
+  (customer_id)
+  
+[0m19:43:27.856878 [debug] [Thread-1 (]: SQL status: CREATE INDEX in 0.329 seconds
+[0m19:43:27.858385 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:27.858886 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_applications"} */
+
+    create  index if not exists
+  "09ef4adf28be81677f7d8617f30aacfb"
+  on "postgres"."public"."fct_applications__dbt_tmp" 
+  (application_date)
+  
+[0m19:43:28.206074 [debug] [Thread-1 (]: SQL status: CREATE INDEX in 0.347 seconds
+[0m19:43:28.207075 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:28.208077 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_applications"} */
+alter table "postgres"."public"."fct_applications__dbt_tmp" rename to "fct_applications"
+[0m19:43:28.492444 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.284 seconds
+[0m19:43:28.493944 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:28.493944 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_applications"} */
+
+        
+            grant select on "postgres"."public"."fct_applications" to ic_readonly;
+        
+    
+[0m19:43:28.774850 [debug] [Thread-1 (]: SQL status: GRANT in 0.280 seconds
+[0m19:43:28.775352 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: COMMIT
+[0m19:43:28.775849 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:28.775849 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: COMMIT
+[0m19:43:29.004196 [debug] [Thread-2 (]: SQL status: SELECT 4 in 12.456 seconds
+[0m19:43:29.006193 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_products"
+[0m19:43:29.006193 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_products"} */
+alter table "postgres"."public"."dim_products__dbt_tmp" rename to "dim_products"
+[0m19:43:29.056760 [debug] [Thread-1 (]: SQL status: COMMIT in 0.280 seconds
+[0m19:43:29.057766 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public"."fct_applications__dbt_backup"
+[0m19:43:29.058272 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_applications"
+[0m19:43:29.058272 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_applications"} */
+drop table if exists "postgres"."public"."fct_applications__dbt_backup" cascade
+[0m19:43:29.302525 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.296 seconds
+[0m19:43:29.303524 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_products"
+[0m19:43:29.304024 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_products"} */
+
+        
+            grant select on "postgres"."public"."dim_products" to ic_readonly;
+        
+    
+[0m19:43:29.338105 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.279 seconds
+[0m19:43:29.338611 [debug] [Thread-1 (]: On model.fintech_dbt.fct_applications: Close
+[0m19:43:29.339112 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234CBE850>]}
+[0m19:43:29.339609 [info ] [Thread-1 (]: 4 of 7 OK created sql table model public.fct_applications ...................... [[32mSELECT 87277[0m in 8.08s]
+[0m19:43:29.340110 [debug] [Thread-1 (]: Finished running node model.fintech_dbt.fct_applications
+[0m19:43:29.340609 [debug] [Thread-1 (]: Began running node model.fintech_dbt.fct_installments
+[0m19:43:29.341110 [info ] [Thread-1 (]: 5 of 7 START sql table model public.fct_installments ........................... [RUN]
+[0m19:43:29.341613 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.fintech_dbt.fct_applications, now model.fintech_dbt.fct_installments)
+[0m19:43:29.341613 [debug] [Thread-1 (]: Began compiling node model.fintech_dbt.fct_installments
+[0m19:43:29.344109 [debug] [Thread-1 (]: Writing injected SQL for node "model.fintech_dbt.fct_installments"
+[0m19:43:29.344612 [debug] [Thread-1 (]: Began executing node model.fintech_dbt.fct_installments
+[0m19:43:29.346610 [debug] [Thread-1 (]: Writing runtime sql for node "model.fintech_dbt.fct_installments"
+[0m19:43:29.347111 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:29.347111 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+
+  
+    
+
+  create  table "postgres"."public"."fct_installments__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- Grain: one row per scheduled installment, evaluated as of `as_of_date`.
+-- dpd = days past due: for paid installments the days it was paid late, for unpaid overdue
+-- installments the days overdue as of the snapshot date.
+
+with pay as (
+    select
+        loan_id,
+        installment_no,
+        min(paid_at)::date    as paid_date,
+        sum(amount_paid)      as paid_amount,
+        sum(late_fee)         as late_fee_paid
+    from "postgres"."raw"."raw_payments"
+    group by 1, 2
+),
+
+base as (
+    select
+        i.loan_id,
+        i.installment_no,
+        i.due_date,
+        i.principal_due,
+        i.interest_due,
+        i.total_due,
+        p.paid_date,
+        coalesce(p.paid_amount, 0)    as paid_amount,
+        coalesce(p.late_fee_paid, 0)  as late_fee_paid,
+        case
+            when p.paid_date is not null then greatest(p.paid_date - i.due_date, 0)
+            when i.due_date < '2026-09-30'::date then '2026-09-30'::date - i.due_date
+            else 0
+        end as dpd,
+        case
+            when p.paid_date is not null and p.paid_date <= i.due_date then 'paid_on_time'
+            when p.paid_date is not null                               then 'paid_late'
+            when i.due_date < '2026-09-30'::date                              then 'overdue'
+            else 'not_yet_due'
+        end as status
+    from "postgres"."raw"."raw_installments" i
+    left join pay p using (loan_id, installment_no)
+)
+
+select
+    (b.loan_id::bigint * 100 + b.installment_no)  as installment_id,
+    b.loan_id,
+    l.customer_id,
+    l.product_id,
+    l.risk_grade,
+    l.acquisition_channel,
+    date_trunc('month', l.disbursement_date)::date as disbursement_month,
+    b.installment_no,
+    b.due_date,
+    b.principal_due,
+    b.interest_due,
+    b.total_due,
+    b.paid_date,
+    b.paid_amount,
+    b.late_fee_paid,
+    b.dpd,
+    case
+        when b.dpd = 0   then '0'
+        when b.dpd <= 7  then '1-7'
+        when b.dpd <= 30 then '8-30'
+        when b.dpd <= 60 then '31-60'
+        when b.dpd <= 90 then '61-90'
+        else '90+'
+    end as dpd_bucket,
+    b.status                                       -- paid_on_time | paid_late | overdue | not_yet_due
+from base b
+join "postgres"."raw"."raw_loans" l using (loan_id)
+  );
+  
+[0m19:43:29.347111 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.585024 [debug] [Thread-2 (]: SQL status: GRANT in 1.281 seconds
+[0m19:43:30.586522 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: COMMIT
+[0m19:43:30.586522 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_products"
+[0m19:43:30.587023 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: COMMIT
+[0m19:43:31.630244 [debug] [Thread-2 (]: SQL status: COMMIT in 1.043 seconds
+[0m19:43:31.631741 [debug] [Thread-2 (]: Applying DROP to: "postgres"."public"."dim_products__dbt_backup"
+[0m19:43:31.632241 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.dim_products"
+[0m19:43:31.632742 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.dim_products"} */
+drop table if exists "postgres"."public"."dim_products__dbt_backup" cascade
+[0m19:43:34.490413 [debug] [Thread-2 (]: SQL status: DROP TABLE in 2.857 seconds
+[0m19:43:34.491913 [debug] [Thread-2 (]: On model.fintech_dbt.dim_products: Close
+[0m19:43:34.491913 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234CEB190>]}
+[0m19:43:34.492917 [info ] [Thread-2 (]: 3 of 7 OK created sql table model public.dim_products .......................... [[32mSELECT 4[0m in 17.96s]
+[0m19:43:34.493921 [debug] [Thread-2 (]: Finished running node model.fintech_dbt.dim_products
+[0m19:43:34.494425 [debug] [Thread-2 (]: Began running node model.fintech_dbt.fct_payments
+[0m19:43:34.494921 [info ] [Thread-2 (]: 6 of 7 START sql table model public.fct_payments ............................... [RUN]
+[0m19:43:34.494921 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.fintech_dbt.dim_products, now model.fintech_dbt.fct_payments)
+[0m19:43:34.495424 [debug] [Thread-2 (]: Began compiling node model.fintech_dbt.fct_payments
+[0m19:43:34.497421 [debug] [Thread-2 (]: Writing injected SQL for node "model.fintech_dbt.fct_payments"
+[0m19:43:34.498426 [debug] [Thread-2 (]: Began executing node model.fintech_dbt.fct_payments
+[0m19:43:34.499935 [debug] [Thread-2 (]: Writing runtime sql for node "model.fintech_dbt.fct_payments"
+[0m19:43:34.500940 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:34.500940 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_payments"} */
+
+  
+    
+
+  create  table "postgres"."public"."fct_payments__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+-- Grain: one row per payment received (cash-in events).
+
+select
+    p.payment_id,
+    p.loan_id,
+    l.customer_id,
+    l.product_id,
+    p.installment_no,
+    p.paid_at,
+    p.paid_at::date                                           as paid_date,
+    date_trunc('month', p.paid_at)::date                      as paid_month,
+    i.due_date,
+    greatest(p.paid_at::date - i.due_date, 0)                 as days_late,
+    (p.paid_at::date > i.due_date)                            as is_late,
+    p.amount_paid,
+    p.late_fee,
+    p.payment_channel
+from "postgres"."raw"."raw_payments" p
+join "postgres"."raw"."raw_loans" l using (loan_id)
+join "postgres"."raw"."raw_installments" i using (loan_id, installment_no)
+  );
+  
+[0m19:43:34.501441 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:43:37.822172 [debug] [Thread-1 (]: SQL status: SELECT 170174 in 8.474 seconds
+[0m19:43:37.823675 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:37.824175 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+
+    create  index if not exists
+  "389de4f48ec19d28a6baa9f9077346c3"
+  on "postgres"."public"."fct_installments__dbt_tmp" 
+  (loan_id)
+  
+[0m19:43:38.445233 [debug] [Thread-1 (]: SQL status: CREATE INDEX in 0.621 seconds
+[0m19:43:38.446733 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:38.446733 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+
+    create  index if not exists
+  "a13c27b3101e2e997ea2aee1ce9526a8"
+  on "postgres"."public"."fct_installments__dbt_tmp" 
+  (due_date)
+  
+[0m19:43:39.084887 [debug] [Thread-1 (]: SQL status: CREATE INDEX in 0.638 seconds
+[0m19:43:39.086386 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:39.086386 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+
+    create  index if not exists
+  "e2235455c204bbd31962f52a76de1e49"
+  on "postgres"."public"."fct_installments__dbt_tmp" 
+  (customer_id)
+  
+[0m19:43:39.527547 [debug] [Thread-1 (]: SQL status: CREATE INDEX in 0.441 seconds
+[0m19:43:39.530054 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:39.530054 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+alter table "postgres"."public"."fct_installments__dbt_tmp" rename to "fct_installments"
+[0m19:43:40.344437 [debug] [Thread-2 (]: SQL status: SELECT 128333 in 5.843 seconds
+[0m19:43:40.345932 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:40.345932 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_payments"} */
+
+    create  index if not exists
+  "6fec22ff49ead07a12bea9a10b2ae64b"
+  on "postgres"."public"."fct_payments__dbt_tmp" 
+  (loan_id)
+  
+[0m19:43:40.664835 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 1.134 seconds
+[0m19:43:40.666340 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:40.666847 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+
+        
+            grant select on "postgres"."public"."fct_installments" to ic_readonly;
+        
+    
+[0m19:43:40.821527 [debug] [Thread-2 (]: SQL status: CREATE INDEX in 0.475 seconds
+[0m19:43:40.822527 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:40.822527 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_payments"} */
+
+    create  index if not exists
+  "775e4f389b0f9c9463fd5180c5f7e125"
+  on "postgres"."public"."fct_payments__dbt_tmp" 
+  (paid_at)
+  
+[0m19:43:41.172133 [debug] [Thread-2 (]: SQL status: CREATE INDEX in 0.349 seconds
+[0m19:43:41.173634 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:41.174134 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_payments"} */
+alter table "postgres"."public"."fct_payments__dbt_tmp" rename to "fct_payments"
+[0m19:43:41.292302 [debug] [Thread-1 (]: SQL status: GRANT in 0.625 seconds
+[0m19:43:41.293305 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: COMMIT
+[0m19:43:41.293305 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:41.293805 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: COMMIT
+[0m19:43:41.437522 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.264 seconds
+[0m19:43:41.439530 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:41.439530 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_payments"} */
+
+        
+            grant select on "postgres"."public"."fct_payments" to ic_readonly;
+        
+    
+[0m19:43:41.700463 [debug] [Thread-2 (]: SQL status: GRANT in 0.261 seconds
+[0m19:43:41.701467 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: COMMIT
+[0m19:43:41.701467 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:41.701973 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: COMMIT
+[0m19:43:41.976342 [debug] [Thread-2 (]: SQL status: COMMIT in 0.274 seconds
+[0m19:43:41.977342 [debug] [Thread-2 (]: Applying DROP to: "postgres"."public"."fct_payments__dbt_backup"
+[0m19:43:41.977342 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_payments"
+[0m19:43:41.978346 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_payments"} */
+drop table if exists "postgres"."public"."fct_payments__dbt_backup" cascade
+[0m19:43:42.240300 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.262 seconds
+[0m19:43:42.241301 [debug] [Thread-2 (]: On model.fintech_dbt.fct_payments: Close
+[0m19:43:42.241800 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234679210>]}
+[0m19:43:42.242300 [info ] [Thread-2 (]: 6 of 7 OK created sql table model public.fct_payments .......................... [[32mSELECT 128333[0m in 7.75s]
+[0m19:43:42.242800 [debug] [Thread-2 (]: Finished running node model.fintech_dbt.fct_payments
+[0m19:43:42.469660 [debug] [Thread-1 (]: SQL status: COMMIT in 1.176 seconds
+[0m19:43:42.470660 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public"."fct_installments__dbt_backup"
+[0m19:43:42.471163 [debug] [Thread-1 (]: Using postgres connection "model.fintech_dbt.fct_installments"
+[0m19:43:42.471660 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_installments"} */
+drop table if exists "postgres"."public"."fct_installments__dbt_backup" cascade
+[0m19:43:42.726965 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.255 seconds
+[0m19:43:42.727468 [debug] [Thread-1 (]: On model.fintech_dbt.fct_installments: Close
+[0m19:43:42.727468 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000222340D1490>]}
+[0m19:43:42.728472 [info ] [Thread-1 (]: 5 of 7 OK created sql table model public.fct_installments ...................... [[32mSELECT 170174[0m in 13.39s]
+[0m19:43:42.728982 [debug] [Thread-1 (]: Finished running node model.fintech_dbt.fct_installments
+[0m19:43:42.729977 [debug] [Thread-2 (]: Began running node model.fintech_dbt.fct_loans
+[0m19:43:42.729977 [info ] [Thread-2 (]: 7 of 7 START sql table model public.fct_loans .................................. [RUN]
+[0m19:43:42.730477 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.fintech_dbt.fct_payments, now model.fintech_dbt.fct_loans)
+[0m19:43:42.730976 [debug] [Thread-2 (]: Began compiling node model.fintech_dbt.fct_loans
+[0m19:43:42.731976 [debug] [Thread-2 (]: Writing injected SQL for node "model.fintech_dbt.fct_loans"
+[0m19:43:42.746923 [debug] [Thread-2 (]: Began executing node model.fintech_dbt.fct_loans
+[0m19:43:42.748931 [debug] [Thread-2 (]: Writing runtime sql for node "model.fintech_dbt.fct_loans"
+[0m19:43:42.748931 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:42.749937 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_loans"} */
+
+  
+    
+
+  create  table "postgres"."public"."fct_loans__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+-- Grain: one row per disbursed loan, with repayment performance as of `as_of_date`.
+
+with inst as (
+    select
+        loan_id,
+        count(*)                                                                as installments_total,
+        count(*) filter (where status in ('paid_on_time', 'paid_late'))         as installments_paid,
+        count(*) filter (where status = 'overdue')                              as installments_overdue,
+        sum(total_due)                                                          as total_due_amount,
+        sum(paid_amount)                                                        as total_paid_amount,
+        sum(principal_due) filter (where status in ('paid_on_time', 'paid_late')) as principal_repaid,
+        sum(interest_due)  filter (where status in ('paid_on_time', 'paid_late')) as interest_collected,
+        sum(late_fee_paid)                                                      as late_fees_collected,
+        sum(principal_due) filter (where status = 'overdue')                    as overdue_principal,
+        max(dpd)                                                                as max_dpd_ever,
+        max(dpd) filter (where status = 'overdue')                              as current_dpd,
+        max(dpd) filter (where installment_no = 1)                              as first_installment_dpd
+    from "postgres"."public"."fct_installments"
+    group by 1
+)
+
+select
+    l.loan_id,
+    l.application_id,
+    l.customer_id,
+    l.product_id,
+    l.disbursement_date,
+    date_trunc('month', l.disbursement_date)::date            as disbursement_month,
+    l.principal,
+    l.tenor_months,
+    l.monthly_interest_rate,
+    l.admin_fee,
+    l.risk_grade,
+    l.acquisition_channel,
+    i.installments_total,
+    i.installments_paid,
+    i.installments_overdue,
+    i.total_due_amount,
+    i.total_paid_amount,
+    coalesce(i.principal_repaid, 0)                           as principal_repaid,
+    l.principal - coalesce(i.principal_repaid, 0)             as outstanding_principal,
+    coalesce(i.overdue_principal, 0)                          as overdue_principal,
+    coalesce(i.interest_collected, 0)                         as interest_collected,
+    coalesce(i.late_fees_collected, 0)                        as late_fees_collected,
+    l.admin_fee + coalesce(i.interest_collected, 0)
+                + coalesce(i.late_fees_collected, 0)          as revenue_collected,
+    i.max_dpd_ever,
+    coalesce(i.current_dpd, 0)                                as current_dpd,
+    case
+        when i.installments_paid = i.installments_total then 'closed'
+        when coalesce(i.current_dpd, 0) > 90                  then 'npl_90plus'
+        when coalesce(i.current_dpd, 0) > 0                   then 'delinquent'
+        else 'current'
+    end                                                       as loan_status,
+    coalesce(i.current_dpd, 0) > 90                           as is_npl90,
+    coalesce(i.max_dpd_ever, 0) >= 30                         as ever_dpd30,
+    coalesce(i.first_installment_dpd, 0) >= 30                as is_fpd30   -- first-payment default
+from "postgres"."raw"."raw_loans" l
+join inst i using (loan_id)
+  );
+  
+[0m19:43:42.750452 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:43:48.261377 [debug] [Thread-2 (]: SQL status: SELECT 35966 in 5.511 seconds
+[0m19:43:48.262876 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:48.263377 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_loans"} */
+
+    create  index if not exists
+  "8dcb0948cac7dee96349340fbb152fde"
+  on "postgres"."public"."fct_loans__dbt_tmp" 
+  (customer_id)
+  
+[0m19:43:48.806961 [debug] [Thread-2 (]: SQL status: CREATE INDEX in 0.544 seconds
+[0m19:43:48.808468 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:48.808973 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_loans"} */
+
+    create  index if not exists
+  "5519aa15450e6216099b7eb2286186c9"
+  on "postgres"."public"."fct_loans__dbt_tmp" 
+  (disbursement_date)
+  
+[0m19:43:49.892929 [debug] [Thread-2 (]: SQL status: CREATE INDEX in 1.084 seconds
+[0m19:43:49.894930 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:49.895430 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_loans"} */
+alter table "postgres"."public"."fct_loans__dbt_tmp" rename to "fct_loans"
+[0m19:43:50.392485 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.497 seconds
+[0m19:43:50.393985 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:50.394485 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_loans"} */
+
+        
+            grant select on "postgres"."public"."fct_loans" to ic_readonly;
+        
+    
+[0m19:43:51.291874 [debug] [Thread-2 (]: SQL status: GRANT in 0.897 seconds
+[0m19:43:51.292873 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: COMMIT
+[0m19:43:51.293373 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:51.293373 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: COMMIT
+[0m19:43:52.749386 [debug] [Thread-2 (]: SQL status: COMMIT in 1.456 seconds
+[0m19:43:52.750888 [debug] [Thread-2 (]: Applying DROP to: "postgres"."public"."fct_loans__dbt_backup"
+[0m19:43:52.751888 [debug] [Thread-2 (]: Using postgres connection "model.fintech_dbt.fct_loans"
+[0m19:43:52.752388 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "model.fintech_dbt.fct_loans"} */
+drop table if exists "postgres"."public"."fct_loans__dbt_backup" cascade
+[0m19:43:54.013988 [debug] [Thread-2 (]: SQL status: DROP TABLE in 1.261 seconds
+[0m19:43:54.014991 [debug] [Thread-2 (]: On model.fintech_dbt.fct_loans: Close
+[0m19:43:54.015995 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3065b480-f79c-404c-a0cf-6b28d73b5a21', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022234DCA0D0>]}
+[0m19:43:54.016503 [info ] [Thread-2 (]: 7 of 7 OK created sql table model public.fct_loans ............................. [[32mSELECT 35966[0m in 11.29s]
+[0m19:43:54.017008 [debug] [Thread-2 (]: Finished running node model.fintech_dbt.fct_loans
+[0m19:43:54.018000 [debug] [MainThread]: On master: COMMIT
+[0m19:43:54.018000 [debug] [MainThread]: Using postgres connection "master"
+[0m19:43:54.018000 [debug] [MainThread]: On master: COMMIT
+[0m19:43:54.018000 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:43:58.224798 [debug] [MainThread]: SQL status: COMMIT in 4.206 seconds
+[0m19:43:58.225300 [debug] [MainThread]: On master: Close
+[0m19:43:58.225300 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:43:58.225300 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m19:43:58.226303 [debug] [MainThread]: Connection 'list_postgres_public' was properly closed.
+[0m19:43:58.226303 [debug] [MainThread]: Connection 'model.fintech_dbt.fct_installments' was properly closed.
+[0m19:43:58.226808 [debug] [MainThread]: Connection 'model.fintech_dbt.fct_loans' was properly closed.
+[0m19:43:58.226808 [info ] [MainThread]: 
+[0m19:43:58.227308 [info ] [MainThread]: Finished running 7 table models in 0 hours 1 minutes and 10.32 seconds (70.32s).
+[0m19:43:58.227808 [debug] [MainThread]: Command end result
+[0m19:43:58.249335 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\manifest.json
+[0m19:43:58.251345 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\semantic_manifest.json
+[0m19:43:58.253345 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\osi_document.json
+[0m19:43:58.257846 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\run_results.json
+[0m19:43:58.257846 [info ] [MainThread]: 
+[0m19:43:58.257846 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:43:58.258851 [info ] [MainThread]: 
+[0m19:43:58.259355 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+[0m19:43:58.259856 [debug] [MainThread]: Command `dbt run` succeeded at 19:43:58.259856 after 71.98 seconds
+[0m19:43:58.260357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002222BFFB150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233E63D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022233E62E10>]}
+[0m19:43:58.260357 [debug] [MainThread]: Flushing usage events
+[0m19:44:01.201161 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:44:21.813094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF23A06D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF245CC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF245DE90>]}
+
+
+============================== 19:44:21.817101 | 0d9a151e-168d-4d59-bcbb-8d8fed8c891e ==============================
+[0m19:44:21.817101 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m19:44:21.817599 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\BEN\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt test', 'log_path': 'C:\\Playground\\Python\\InsightCopilot-v2\\fintech_dbt\\logs'}
+[0m19:44:21.817599 [debug] [MainThread]: Tracking: tracking
+[0m19:44:21.914755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0d9a151e-168d-4d59-bcbb-8d8fed8c891e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF2441190>]}
+[0m19:44:21.945300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0d9a151e-168d-4d59-bcbb-8d8fed8c891e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AEDBB83D0>]}
+[0m19:44:21.946801 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:44:22.057950 [debug] [MainThread]: checksum: 269185b64a7be3db4b938454a745305dc16efb842066a47ce48fa4b30124e10c, vars: {}, profile: fintech_dbt, target: dev, version: 1.13.0b1
+[0m19:44:22.175207 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:44:22.175207 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:44:22.175709 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:44:22.180211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0d9a151e-168d-4d59-bcbb-8d8fed8c891e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF2ACAE10>]}
+[0m19:44:22.247290 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\manifest.json
+[0m19:44:22.249802 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\semantic_manifest.json
+[0m19:44:22.269832 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\osi_document.json
+[0m19:44:22.284355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0d9a151e-168d-4d59-bcbb-8d8fed8c891e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF2634350>]}
+[0m19:44:22.284855 [info ] [MainThread]: Found 7 models, 22 data tests, 6 sources, 477 macros
+[0m19:44:22.285355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0d9a151e-168d-4d59-bcbb-8d8fed8c891e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF078A250>]}
+[0m19:44:22.286854 [info ] [MainThread]: 
+[0m19:44:22.287354 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m19:44:22.287354 [info ] [MainThread]: 
+[0m19:44:22.287863 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:44:22.290866 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public'
+[0m19:44:22.324908 [debug] [ThreadPool]: Using postgres connection "list_postgres_public"
+[0m19:44:22.325408 [debug] [ThreadPool]: On list_postgres_public: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "connection_name": "list_postgres_public"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public'
+  
+[0m19:44:22.325408 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:44:27.985554 [debug] [ThreadPool]: SQL status: SELECT 7 in 5.660 seconds
+[0m19:44:27.986553 [debug] [ThreadPool]: On list_postgres_public: ROLLBACK
+[0m19:44:28.948944 [debug] [ThreadPool]: On list_postgres_public: Close
+[0m19:44:28.952962 [debug] [MainThread]: Using postgres connection "master"
+[0m19:44:28.953470 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:44:28.953961 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:44:36.519041 [debug] [MainThread]: SQL status: SELECT 1 in 7.566 seconds
+[0m19:44:36.520554 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0d9a151e-168d-4d59-bcbb-8d8fed8c891e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF2A56910>]}
+[0m19:44:36.521050 [debug] [MainThread]: On master: ROLLBACK
+[0m19:44:36.777018 [debug] [MainThread]: On master: COMMIT
+[0m19:44:36.777518 [debug] [MainThread]: Using postgres connection "master"
+[0m19:44:36.777518 [debug] [MainThread]: On master: COMMIT
+[0m19:44:37.287577 [debug] [MainThread]: SQL status: COMMIT in 0.510 seconds
+[0m19:44:37.288078 [debug] [MainThread]: On master: Close
+[0m19:44:37.291589 [debug] [Thread-1 (]: Began running node test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a
+[0m19:44:37.292089 [debug] [Thread-2 (]: Began running node test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b
+[0m19:44:37.292089 [info ] [Thread-1 (]: 1 of 22 START test accepted_values_fct_applications_decision__approved__rejected  [RUN]
+[0m19:44:37.293089 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a'
+[0m19:44:37.292587 [info ] [Thread-2 (]: 2 of 22 START test accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due  [RUN]
+[0m19:44:37.293589 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a
+[0m19:44:37.294090 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b'
+[0m19:44:37.308111 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a"
+[0m19:44:37.308111 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b
+[0m19:44:37.320655 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b"
+[0m19:44:37.321146 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a
+[0m19:44:37.330151 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a"
+[0m19:44:37.330151 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b
+[0m19:44:37.331702 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b"
+[0m19:44:37.332703 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a"
+[0m19:44:37.332703 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b"
+[0m19:44:37.333203 [debug] [Thread-1 (]: On test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        decision as value_field,
+        count(*) as n_records
+
+    from "postgres"."public"."fct_applications"
+    group by decision
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'approved','rejected'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:37.333703 [debug] [Thread-2 (]: On test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from "postgres"."public"."fct_installments"
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'paid_on_time','paid_late','overdue','not_yet_due'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:37.333703 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:44:37.334203 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m19:44:41.432869 [debug] [Thread-2 (]: SQL status: SELECT 1 in 4.099 seconds
+[0m19:44:41.435867 [debug] [Thread-2 (]: On test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b: ROLLBACK
+[0m19:44:41.477914 [debug] [Thread-1 (]: SQL status: SELECT 1 in 4.144 seconds
+[0m19:44:41.478417 [debug] [Thread-1 (]: On test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a: ROLLBACK
+[0m19:44:42.087300 [debug] [Thread-2 (]: On test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b: Close
+[0m19:44:42.088302 [info ] [Thread-2 (]: 2 of 22 PASS accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due  [[32mPASS[0m in 4.79s]
+[0m19:44:42.088800 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b
+[0m19:44:42.089311 [debug] [Thread-2 (]: Began running node test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91
+[0m19:44:42.089311 [info ] [Thread-2 (]: 3 of 22 START test accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus  [RUN]
+[0m19:44:42.090316 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.accepted_values_fct_installments_status__paid_on_time__paid_late__overdue__not_yet_due.38f81b5f3b, now test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91)
+[0m19:44:42.090316 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91
+[0m19:44:42.102341 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91"
+[0m19:44:42.102341 [debug] [Thread-1 (]: On test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a: Close
+[0m19:44:42.103342 [info ] [Thread-1 (]: 1 of 22 PASS accepted_values_fct_applications_decision__approved__rejected ..... [[32mPASS[0m in 4.81s]
+[0m19:44:42.103342 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a
+[0m19:44:42.103342 [debug] [Thread-1 (]: Began running node test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m19:44:42.104505 [info ] [Thread-1 (]: 4 of 22 START test not_null_dim_customers_customer_id .......................... [RUN]
+[0m19:44:42.104505 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.accepted_values_fct_applications_decision__approved__rejected.74301eaf3a, now test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d)
+[0m19:44:42.104505 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m19:44:42.109810 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m19:44:42.116879 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91
+[0m19:44:42.117379 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m19:44:42.118381 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91"
+[0m19:44:42.119381 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m19:44:42.120385 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91"
+[0m19:44:42.120892 [debug] [Thread-2 (]: On test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        loan_status as value_field,
+        count(*) as n_records
+
+    from "postgres"."public"."fct_loans"
+    group by loan_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'closed','current','delinquent','npl_90plus'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:42.121397 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m19:44:42.121890 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:44:42.121890 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "postgres"."public"."dim_customers"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:42.122892 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:44:47.830919 [debug] [Thread-2 (]: SQL status: SELECT 1 in 5.709 seconds
+[0m19:44:47.832416 [debug] [Thread-2 (]: On test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91: ROLLBACK
+[0m19:44:48.051672 [debug] [Thread-1 (]: SQL status: SELECT 1 in 5.929 seconds
+[0m19:44:48.052669 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d: ROLLBACK
+[0m19:44:48.325306 [debug] [Thread-2 (]: On test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91: Close
+[0m19:44:48.325805 [info ] [Thread-2 (]: 3 of 22 PASS accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus  [[32mPASS[0m in 6.24s]
+[0m19:44:48.326806 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91
+[0m19:44:48.326806 [debug] [Thread-2 (]: Began running node test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2
+[0m19:44:48.327306 [info ] [Thread-2 (]: 5 of 22 START test not_null_dim_date_date_day .................................. [RUN]
+[0m19:44:48.327804 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.accepted_values_fct_loans_loan_status__closed__current__delinquent__npl_90plus.ce29d6db91, now test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2)
+[0m19:44:48.328306 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2
+[0m19:44:48.332818 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2"
+[0m19:44:48.333818 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2
+[0m19:44:48.334817 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2"
+[0m19:44:48.335319 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2"
+[0m19:44:48.335819 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date_day
+from "postgres"."public"."dim_date"
+where date_day is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:48.335819 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:44:48.411409 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d: Close
+[0m19:44:48.411909 [info ] [Thread-1 (]: 4 of 22 PASS not_null_dim_customers_customer_id ................................ [[32mPASS[0m in 6.31s]
+[0m19:44:48.412413 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m19:44:48.412413 [debug] [Thread-1 (]: Began running node test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1
+[0m19:44:48.412912 [info ] [Thread-1 (]: 6 of 22 START test not_null_dim_products_product_id ............................ [RUN]
+[0m19:44:48.412912 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_dim_customers_customer_id.dd91cd1c8d, now test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1)
+[0m19:44:48.412912 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1
+[0m19:44:48.417427 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1"
+[0m19:44:48.418427 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1
+[0m19:44:48.418926 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1"
+[0m19:44:48.419425 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1"
+[0m19:44:48.420429 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select product_id
+from "postgres"."public"."dim_products"
+where product_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:48.420429 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:44:53.400576 [debug] [Thread-1 (]: SQL status: SELECT 1 in 4.979 seconds
+[0m19:44:53.402087 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1: ROLLBACK
+[0m19:44:53.732421 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1: Close
+[0m19:44:53.733422 [info ] [Thread-1 (]: 6 of 22 PASS not_null_dim_products_product_id .................................. [[32mPASS[0m in 5.32s]
+[0m19:44:53.733923 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1
+[0m19:44:53.733923 [debug] [Thread-1 (]: Began running node test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788
+[0m19:44:53.734424 [info ] [Thread-1 (]: 7 of 22 START test not_null_fct_applications_application_id .................... [RUN]
+[0m19:44:53.734921 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_dim_products_product_id.c8aba288d1, now test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788)
+[0m19:44:53.735421 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788
+[0m19:44:53.739421 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788"
+[0m19:44:53.739921 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788
+[0m19:44:53.741430 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788"
+[0m19:44:53.755663 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788"
+[0m19:44:53.755663 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select application_id
+from "postgres"."public"."fct_applications"
+where application_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:53.756165 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:44:56.600860 [debug] [Thread-2 (]: SQL status: SELECT 1 in 8.265 seconds
+[0m19:44:56.601871 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2: ROLLBACK
+[0m19:44:57.055434 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2: Close
+[0m19:44:57.055935 [info ] [Thread-2 (]: 5 of 22 PASS not_null_dim_date_date_day ........................................ [[32mPASS[0m in 8.73s]
+[0m19:44:57.056437 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2
+[0m19:44:57.056935 [debug] [Thread-2 (]: Began running node test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614
+[0m19:44:57.057437 [info ] [Thread-2 (]: 8 of 22 START test not_null_fct_installments_installment_id .................... [RUN]
+[0m19:44:57.057935 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_dim_date_date_day.e3f312efb2, now test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614)
+[0m19:44:57.057935 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614
+[0m19:44:57.062450 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614"
+[0m19:44:57.063456 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614
+[0m19:44:57.064466 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614"
+[0m19:44:57.064964 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614"
+[0m19:44:57.065464 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select installment_id
+from "postgres"."public"."fct_installments"
+where installment_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:44:57.065464 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:01.266271 [debug] [Thread-1 (]: SQL status: SELECT 1 in 7.510 seconds
+[0m19:45:01.267272 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788: ROLLBACK
+[0m19:45:01.525694 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788: Close
+[0m19:45:01.526694 [info ] [Thread-1 (]: 7 of 22 PASS not_null_fct_applications_application_id .......................... [[32mPASS[0m in 7.79s]
+[0m19:45:01.527196 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788
+[0m19:45:01.527196 [debug] [Thread-1 (]: Began running node test.fintech_dbt.not_null_fct_loans_loan_id.1067693330
+[0m19:45:01.527694 [info ] [Thread-1 (]: 9 of 22 START test not_null_fct_loans_loan_id .................................. [RUN]
+[0m19:45:01.528194 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_fct_applications_application_id.326b6d2788, now test.fintech_dbt.not_null_fct_loans_loan_id.1067693330)
+[0m19:45:01.528194 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.not_null_fct_loans_loan_id.1067693330
+[0m19:45:01.532241 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.not_null_fct_loans_loan_id.1067693330"
+[0m19:45:01.546724 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.not_null_fct_loans_loan_id.1067693330
+[0m19:45:01.547729 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.not_null_fct_loans_loan_id.1067693330"
+[0m19:45:01.548231 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.not_null_fct_loans_loan_id.1067693330"
+[0m19:45:01.548730 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_fct_loans_loan_id.1067693330: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_fct_loans_loan_id.1067693330"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select loan_id
+from "postgres"."public"."fct_loans"
+where loan_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:01.548730 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:01.929830 [debug] [Thread-2 (]: SQL status: SELECT 1 in 4.865 seconds
+[0m19:45:01.931410 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614: ROLLBACK
+[0m19:45:02.568059 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614: Close
+[0m19:45:02.569061 [info ] [Thread-2 (]: 8 of 22 PASS not_null_fct_installments_installment_id .......................... [[32mPASS[0m in 5.51s]
+[0m19:45:02.569563 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614
+[0m19:45:02.569563 [debug] [Thread-2 (]: Began running node test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166
+[0m19:45:02.570062 [info ] [Thread-2 (]: 10 of 22 START test not_null_fct_payments_payment_id ........................... [RUN]
+[0m19:45:02.570062 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_fct_installments_installment_id.8041cee614, now test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166)
+[0m19:45:02.570062 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166
+[0m19:45:02.574572 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166"
+[0m19:45:02.575575 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166
+[0m19:45:02.576075 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166"
+[0m19:45:02.590211 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166"
+[0m19:45:02.590211 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select payment_id
+from "postgres"."public"."fct_payments"
+where payment_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:02.591219 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:08.806779 [debug] [Thread-1 (]: SQL status: SELECT 1 in 7.258 seconds
+[0m19:45:08.807780 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_fct_loans_loan_id.1067693330: ROLLBACK
+[0m19:45:09.373831 [debug] [Thread-1 (]: On test.fintech_dbt.not_null_fct_loans_loan_id.1067693330: Close
+[0m19:45:09.374331 [info ] [Thread-1 (]: 9 of 22 PASS not_null_fct_loans_loan_id ........................................ [[32mPASS[0m in 7.85s]
+[0m19:45:09.374832 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.not_null_fct_loans_loan_id.1067693330
+[0m19:45:09.375331 [debug] [Thread-1 (]: Began running node test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa
+[0m19:45:09.375831 [info ] [Thread-1 (]: 11 of 22 START test relationships_fct_applications_customer_id__customer_id__ref_dim_customers_  [RUN]
+[0m19:45:09.375831 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_fct_loans_loan_id.1067693330, now test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa)
+[0m19:45:09.376334 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa
+[0m19:45:09.385854 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa"
+[0m19:45:09.386853 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa
+[0m19:45:09.387853 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa"
+[0m19:45:09.388354 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa"
+[0m19:45:09.388853 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from "postgres"."public"."fct_applications"
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from "postgres"."public"."dim_customers"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:09.388853 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:16.884795 [debug] [Thread-2 (]: SQL status: SELECT 1 in 14.294 seconds
+[0m19:45:16.886297 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166: ROLLBACK
+[0m19:45:17.107383 [debug] [Thread-1 (]: SQL status: SELECT 1 in 7.719 seconds
+[0m19:45:17.108387 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa: ROLLBACK
+[0m19:45:17.169484 [debug] [Thread-2 (]: On test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166: Close
+[0m19:45:17.169989 [info ] [Thread-2 (]: 10 of 22 PASS not_null_fct_payments_payment_id ................................. [[32mPASS[0m in 14.60s]
+[0m19:45:17.170486 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166
+[0m19:45:17.170486 [debug] [Thread-2 (]: Began running node test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb
+[0m19:45:17.171490 [info ] [Thread-2 (]: 12 of 22 START test relationships_fct_installments_loan_id__loan_id__ref_fct_loans_  [RUN]
+[0m19:45:17.171999 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.not_null_fct_payments_payment_id.f8fe414166, now test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb)
+[0m19:45:17.172496 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb
+[0m19:45:17.180003 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb"
+[0m19:45:17.180501 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb
+[0m19:45:17.182035 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb"
+[0m19:45:17.182535 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb"
+[0m19:45:17.183040 [debug] [Thread-2 (]: On test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select loan_id as from_field
+    from "postgres"."public"."fct_installments"
+    where loan_id is not null
+),
+
+parent as (
+    select loan_id as to_field
+    from "postgres"."public"."fct_loans"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:17.183040 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:18.614832 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa: Close
+[0m19:45:18.615833 [info ] [Thread-1 (]: 11 of 22 PASS relationships_fct_applications_customer_id__customer_id__ref_dim_customers_  [[32mPASS[0m in 9.24s]
+[0m19:45:18.616832 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa
+[0m19:45:18.616832 [debug] [Thread-1 (]: Began running node test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a
+[0m19:45:18.617333 [info ] [Thread-1 (]: 13 of 22 START test relationships_fct_loans_customer_id__customer_id__ref_dim_customers_  [RUN]
+[0m19:45:18.617840 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.relationships_fct_applications_customer_id__customer_id__ref_dim_customers_.f553dcccfa, now test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a)
+[0m19:45:18.617840 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a
+[0m19:45:18.623844 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a"
+[0m19:45:18.624843 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a
+[0m19:45:18.625841 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a"
+[0m19:45:18.626345 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a"
+[0m19:45:18.626844 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from "postgres"."public"."fct_loans"
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from "postgres"."public"."dim_customers"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:18.626844 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:23.133609 [debug] [Thread-2 (]: SQL status: SELECT 1 in 5.950 seconds
+[0m19:45:23.134611 [debug] [Thread-2 (]: On test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb: ROLLBACK
+[0m19:45:23.415458 [debug] [Thread-2 (]: On test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb: Close
+[0m19:45:23.416460 [info ] [Thread-2 (]: 12 of 22 PASS relationships_fct_installments_loan_id__loan_id__ref_fct_loans_ .. [[32mPASS[0m in 6.24s]
+[0m19:45:23.416960 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb
+[0m19:45:23.416960 [debug] [Thread-2 (]: Began running node test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b
+[0m19:45:23.417459 [info ] [Thread-2 (]: 14 of 22 START test relationships_fct_loans_product_id__product_id__ref_dim_products_  [RUN]
+[0m19:45:23.417962 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.relationships_fct_installments_loan_id__loan_id__ref_fct_loans_.0ae72d88fb, now test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b)
+[0m19:45:23.418460 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b
+[0m19:45:23.426467 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b"
+[0m19:45:23.440670 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b
+[0m19:45:23.441678 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b"
+[0m19:45:23.442685 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b"
+[0m19:45:23.443187 [debug] [Thread-2 (]: On test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select product_id as from_field
+    from "postgres"."public"."fct_loans"
+    where product_id is not null
+),
+
+parent as (
+    select product_id as to_field
+    from "postgres"."public"."dim_products"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:23.443187 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:24.338238 [debug] [Thread-1 (]: SQL status: SELECT 1 in 5.711 seconds
+[0m19:45:24.339240 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a: ROLLBACK
+[0m19:45:24.630579 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a: Close
+[0m19:45:24.631079 [info ] [Thread-1 (]: 13 of 22 PASS relationships_fct_loans_customer_id__customer_id__ref_dim_customers_  [[32mPASS[0m in 6.01s]
+[0m19:45:24.632084 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a
+[0m19:45:24.632589 [debug] [Thread-1 (]: Began running node test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38
+[0m19:45:24.632589 [info ] [Thread-1 (]: 15 of 22 START test relationships_fct_payments_loan_id__loan_id__ref_fct_loans_  [RUN]
+[0m19:45:24.633089 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.relationships_fct_loans_customer_id__customer_id__ref_dim_customers_.7f8ad0794a, now test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38)
+[0m19:45:24.633089 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38
+[0m19:45:24.639099 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38"
+[0m19:45:24.640099 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38
+[0m19:45:24.641099 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38"
+[0m19:45:24.655341 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38"
+[0m19:45:24.655839 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select loan_id as from_field
+    from "postgres"."public"."fct_payments"
+    where loan_id is not null
+),
+
+parent as (
+    select loan_id as to_field
+    from "postgres"."public"."fct_loans"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:24.655839 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:32.174389 [debug] [Thread-2 (]: SQL status: SELECT 1 in 8.731 seconds
+[0m19:45:32.175889 [debug] [Thread-2 (]: On test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b: ROLLBACK
+[0m19:45:32.434643 [debug] [Thread-2 (]: On test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b: Close
+[0m19:45:32.435144 [info ] [Thread-2 (]: 14 of 22 PASS relationships_fct_loans_product_id__product_id__ref_dim_products_  [[32mPASS[0m in 9.02s]
+[0m19:45:32.435644 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b
+[0m19:45:32.436144 [debug] [Thread-2 (]: Began running node test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd
+[0m19:45:32.436144 [info ] [Thread-2 (]: 16 of 22 START test unique_dim_customers_customer_id ........................... [RUN]
+[0m19:45:32.436645 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.relationships_fct_loans_product_id__product_id__ref_dim_products_.b1bfb9ef5b, now test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd)
+[0m19:45:32.437145 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd
+[0m19:45:32.442148 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m19:45:32.443152 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd
+[0m19:45:32.444152 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m19:45:32.444152 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m19:45:32.445158 [debug] [Thread-2 (]: On test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."dim_customers"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:32.445158 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:37.433498 [debug] [Thread-1 (]: SQL status: SELECT 1 in 12.778 seconds
+[0m19:45:37.435000 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38: ROLLBACK
+[0m19:45:37.722089 [debug] [Thread-1 (]: On test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38: Close
+[0m19:45:37.723093 [info ] [Thread-1 (]: 15 of 22 PASS relationships_fct_payments_loan_id__loan_id__ref_fct_loans_ ...... [[32mPASS[0m in 13.09s]
+[0m19:45:37.723596 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38
+[0m19:45:37.724096 [debug] [Thread-1 (]: Began running node test.fintech_dbt.unique_dim_date_date_day.d56fd19199
+[0m19:45:37.724096 [info ] [Thread-1 (]: 17 of 22 START test unique_dim_date_date_day ................................... [RUN]
+[0m19:45:37.724595 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.relationships_fct_payments_loan_id__loan_id__ref_fct_loans_.2d7c339c38, now test.fintech_dbt.unique_dim_date_date_day.d56fd19199)
+[0m19:45:37.725094 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.unique_dim_date_date_day.d56fd19199
+[0m19:45:37.728597 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.unique_dim_date_date_day.d56fd19199"
+[0m19:45:37.745556 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.unique_dim_date_date_day.d56fd19199
+[0m19:45:37.747061 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.unique_dim_date_date_day.d56fd19199"
+[0m19:45:37.747559 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.unique_dim_date_date_day.d56fd19199"
+[0m19:45:37.748061 [debug] [Thread-1 (]: On test.fintech_dbt.unique_dim_date_date_day.d56fd19199: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_dim_date_date_day.d56fd19199"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    date_day as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."dim_date"
+where date_day is not null
+group by date_day
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:37.748061 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:38.037441 [debug] [Thread-2 (]: SQL status: SELECT 1 in 5.592 seconds
+[0m19:45:38.038444 [debug] [Thread-2 (]: On test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd: ROLLBACK
+[0m19:45:38.468200 [debug] [Thread-2 (]: On test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd: Close
+[0m19:45:38.469202 [info ] [Thread-2 (]: 16 of 22 PASS unique_dim_customers_customer_id ................................. [[32mPASS[0m in 6.03s]
+[0m19:45:38.469701 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd
+[0m19:45:38.469701 [debug] [Thread-2 (]: Began running node test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985
+[0m19:45:38.470201 [info ] [Thread-2 (]: 18 of 22 START test unique_dim_products_product_id ............................. [RUN]
+[0m19:45:38.470701 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.unique_dim_customers_customer_id.15c9f1e2fd, now test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985)
+[0m19:45:38.471202 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985
+[0m19:45:38.475215 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985"
+[0m19:45:38.489964 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985
+[0m19:45:38.490961 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985"
+[0m19:45:38.491462 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985"
+[0m19:45:38.491462 [debug] [Thread-2 (]: On test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    product_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."dim_products"
+where product_id is not null
+group by product_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:38.492470 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:42.650954 [debug] [Thread-1 (]: SQL status: SELECT 1 in 4.903 seconds
+[0m19:45:42.651455 [debug] [Thread-1 (]: On test.fintech_dbt.unique_dim_date_date_day.d56fd19199: ROLLBACK
+[0m19:45:42.911815 [debug] [Thread-1 (]: On test.fintech_dbt.unique_dim_date_date_day.d56fd19199: Close
+[0m19:45:42.912819 [info ] [Thread-1 (]: 17 of 22 PASS unique_dim_date_date_day ......................................... [[32mPASS[0m in 5.19s]
+[0m19:45:42.913322 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.unique_dim_date_date_day.d56fd19199
+[0m19:45:42.913822 [debug] [Thread-1 (]: Began running node test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae
+[0m19:45:42.913822 [info ] [Thread-1 (]: 19 of 22 START test unique_fct_applications_application_id ..................... [RUN]
+[0m19:45:42.914319 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.unique_dim_date_date_day.d56fd19199, now test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae)
+[0m19:45:42.914820 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae
+[0m19:45:42.919365 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae"
+[0m19:45:42.919819 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae
+[0m19:45:42.920820 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae"
+[0m19:45:42.921320 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae"
+[0m19:45:42.921320 [debug] [Thread-1 (]: On test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    application_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."fct_applications"
+where application_id is not null
+group by application_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:42.921320 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:44.465026 [debug] [Thread-2 (]: SQL status: SELECT 1 in 5.972 seconds
+[0m19:45:44.466023 [debug] [Thread-2 (]: On test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985: ROLLBACK
+[0m19:45:44.765519 [debug] [Thread-2 (]: On test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985: Close
+[0m19:45:44.766520 [info ] [Thread-2 (]: 18 of 22 PASS unique_dim_products_product_id ................................... [[32mPASS[0m in 6.30s]
+[0m19:45:44.767022 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985
+[0m19:45:44.767022 [debug] [Thread-2 (]: Began running node test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8
+[0m19:45:44.767522 [info ] [Thread-2 (]: 20 of 22 START test unique_fct_installments_installment_id ..................... [RUN]
+[0m19:45:44.768023 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.unique_dim_products_product_id.ef7b2a9985, now test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8)
+[0m19:45:44.768023 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8
+[0m19:45:44.772525 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8"
+[0m19:45:44.773533 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8
+[0m19:45:44.774531 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8"
+[0m19:45:44.775033 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8"
+[0m19:45:44.775533 [debug] [Thread-2 (]: On test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    installment_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."fct_installments"
+where installment_id is not null
+group by installment_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:44.775533 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:51.748904 [debug] [Thread-2 (]: SQL status: SELECT 1 in 6.973 seconds
+[0m19:45:51.749905 [debug] [Thread-2 (]: On test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8: ROLLBACK
+[0m19:45:52.122560 [debug] [Thread-1 (]: SQL status: SELECT 1 in 9.201 seconds
+[0m19:45:52.123564 [debug] [Thread-1 (]: On test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae: ROLLBACK
+[0m19:45:52.660340 [debug] [Thread-1 (]: On test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae: Close
+[0m19:45:52.661343 [info ] [Thread-1 (]: 19 of 22 PASS unique_fct_applications_application_id ........................... [[32mPASS[0m in 9.75s]
+[0m19:45:52.661852 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae
+[0m19:45:52.661852 [debug] [Thread-1 (]: Began running node test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329
+[0m19:45:52.662857 [info ] [Thread-1 (]: 21 of 22 START test unique_fct_loans_loan_id ................................... [RUN]
+[0m19:45:52.663364 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.unique_fct_applications_application_id.46df1ab2ae, now test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329)
+[0m19:45:52.663864 [debug] [Thread-1 (]: Began compiling node test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329
+[0m19:45:52.667863 [debug] [Thread-1 (]: Writing injected SQL for node "test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329"
+[0m19:45:52.668365 [debug] [Thread-1 (]: Began executing node test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329
+[0m19:45:52.669877 [debug] [Thread-1 (]: Writing runtime sql for node "test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329"
+[0m19:45:52.670379 [debug] [Thread-1 (]: Using postgres connection "test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329"
+[0m19:45:52.670879 [debug] [Thread-1 (]: On test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    loan_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."fct_loans"
+where loan_id is not null
+group by loan_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:52.670879 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:53.371299 [debug] [Thread-2 (]: On test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8: Close
+[0m19:45:53.371801 [info ] [Thread-2 (]: 20 of 22 PASS unique_fct_installments_installment_id ........................... [[32mPASS[0m in 8.60s]
+[0m19:45:53.372808 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8
+[0m19:45:53.373318 [debug] [Thread-2 (]: Began running node test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46
+[0m19:45:53.373318 [info ] [Thread-2 (]: 22 of 22 START test unique_fct_payments_payment_id ............................. [RUN]
+[0m19:45:53.373815 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fintech_dbt.unique_fct_installments_installment_id.f10f735bf8, now test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46)
+[0m19:45:53.374315 [debug] [Thread-2 (]: Began compiling node test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46
+[0m19:45:53.377815 [debug] [Thread-2 (]: Writing injected SQL for node "test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46"
+[0m19:45:53.391803 [debug] [Thread-2 (]: Began executing node test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46
+[0m19:45:53.393314 [debug] [Thread-2 (]: Writing runtime sql for node "test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46"
+[0m19:45:53.393815 [debug] [Thread-2 (]: Using postgres connection "test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46"
+[0m19:45:53.393815 [debug] [Thread-2 (]: On test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46: /* {"app": "dbt", "dbt_version": "1.13.0b1", "profile_name": "fintech_dbt", "target_name": "dev", "node_id": "test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    payment_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."fct_payments"
+where payment_id is not null
+group by payment_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:53.394823 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:45:58.703358 [debug] [Thread-1 (]: SQL status: SELECT 1 in 6.032 seconds
+[0m19:45:58.704856 [debug] [Thread-1 (]: On test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329: ROLLBACK
+[0m19:45:58.964737 [debug] [Thread-1 (]: On test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329: Close
+[0m19:45:58.965737 [info ] [Thread-1 (]: 21 of 22 PASS unique_fct_loans_loan_id ......................................... [[32mPASS[0m in 6.30s]
+[0m19:45:58.966240 [debug] [Thread-1 (]: Finished running node test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329
+[0m19:45:59.526182 [debug] [Thread-2 (]: SQL status: SELECT 1 in 6.131 seconds
+[0m19:45:59.526687 [debug] [Thread-2 (]: On test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46: ROLLBACK
+[0m19:45:59.788017 [debug] [Thread-2 (]: On test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46: Close
+[0m19:45:59.788518 [info ] [Thread-2 (]: 22 of 22 PASS unique_fct_payments_payment_id ................................... [[32mPASS[0m in 6.41s]
+[0m19:45:59.789020 [debug] [Thread-2 (]: Finished running node test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46
+[0m19:45:59.790018 [debug] [MainThread]: On master: COMMIT
+[0m19:45:59.790517 [debug] [MainThread]: Using postgres connection "master"
+[0m19:45:59.790517 [debug] [MainThread]: On master: COMMIT
+[0m19:45:59.791022 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:46:07.005606 [debug] [MainThread]: SQL status: COMMIT in 7.215 seconds
+[0m19:46:07.006109 [debug] [MainThread]: On master: Close
+[0m19:46:07.006606 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:46:07.006606 [debug] [MainThread]: Connection 'list_postgres_public' was properly closed.
+[0m19:46:07.007106 [debug] [MainThread]: Connection 'test.fintech_dbt.unique_fct_loans_loan_id.b0f955a329' was properly closed.
+[0m19:46:07.007106 [debug] [MainThread]: Connection 'test.fintech_dbt.unique_fct_payments_payment_id.4572b82d46' was properly closed.
+[0m19:46:07.007608 [info ] [MainThread]: 
+[0m19:46:07.007608 [info ] [MainThread]: Finished running 22 data tests in 0 hours 1 minutes and 44.72 seconds (104.72s).
+[0m19:46:07.009606 [debug] [MainThread]: Command end result
+[0m19:46:07.030146 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\manifest.json
+[0m19:46:07.032143 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\semantic_manifest.json
+[0m19:46:07.034153 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\osi_document.json
+[0m19:46:07.039162 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Playground\Python\InsightCopilot-v2\fintech_dbt\target\run_results.json
+[0m19:46:07.039162 [info ] [MainThread]: 
+[0m19:46:07.039663 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:46:07.040161 [info ] [MainThread]: 
+[0m19:46:07.040161 [info ] [MainThread]: Done. PASS=22 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=22
+[0m19:46:07.041161 [debug] [MainThread]: Command `dbt test` succeeded at 19:46:07.041161 after 105.28 seconds
+[0m19:46:07.041661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF22D5F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AEA66B150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018AF2385510>]}
+[0m19:46:07.041661 [debug] [MainThread]: Flushing usage events
+[0m19:46:10.264013 [debug] [MainThread]: An error was encountered while trying to flush usage events

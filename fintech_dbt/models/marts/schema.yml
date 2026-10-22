@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+  - name: dim_date
+    columns:
+      - name: date_day
+        tests: [unique, not_null]
+
+  - name: fct_applications
+    columns:
+      - name: application_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments: {to: ref('dim_customers'), field: customer_id}
+      - name: decision
+        tests:
+          - accepted_values:
+              arguments: {values: [approved, rejected]}
+
+  - name: fct_loans
+    columns:
+      - name: loan_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments: {to: ref('dim_customers'), field: customer_id}
+      - name: product_id
+        tests:
+          - relationships:
+              arguments: {to: ref('dim_products'), field: product_id}
+      - name: loan_status
+        tests:
+          - accepted_values:
+              arguments: {values: [closed, current, delinquent, npl_90plus]}
+
+  - name: fct_installments
+    columns:
+      - name: installment_id
+        tests: [unique, not_null]
+      - name: loan_id
+        tests:
+          - relationships:
+              arguments: {to: ref('fct_loans'), field: loan_id}
+      - name: status
+        tests:
+          - accepted_values:
+              arguments: {values: [paid_on_time, paid_late, overdue, not_yet_due]}
+
+  - name: fct_payments
+    columns:
+      - name: payment_id
+        tests: [unique, not_null]
+      - name: loan_id
+        tests:
+          - relationships:
+              arguments: {to: ref('fct_loans'), field: loan_id}

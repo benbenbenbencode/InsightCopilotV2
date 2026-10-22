@@ -1,0 +1,11 @@
+name: 'retail_dbt'
+version: '1.0.0'
+config-version: 2
+profile: 'retail_dbt'
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  retail_dbt:
+    +materialized: table

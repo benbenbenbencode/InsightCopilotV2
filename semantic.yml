@@ -1,0 +1,69 @@
+# Semantic layer for the synthetic fintech (consumer lending) dataset.
+# The agent reads this on every question. Keep definitions here, not in people's heads.
+# All money is in IDR. Data snapshot date: 2026-09-30 (dbt var as_of_date).
+tables:
+  dim_customers:
+    description: One row per customer (borrower). Demographics and acquisition channel.
+    columns:
+      customer_id: primary key
+      employment_type: employee | self_employed | gig_worker | civil_servant
+      income_band: "<5M | 5-10M | 10-20M | 20M+ (monthly income, IDR)"
+      acquisition_channel: organic | referral | paid_social | partner | field_agent
+  dim_products:
+    description: Loan products (Cash Loan, Paylater, Salary Advance, Micro Business Loan).
+  dim_date:
+    description: Calendar table (date_day, year_month, month_start, week_start, is_weekend...).
+  fct_applications:
+    description: One row per loan application, approved AND rejected. Use for funnel and approval-rate questions.
+    columns:
+      decision: approved | rejected
+      reject_reason: only set when rejected
+      risk_grade: A (best credit) to E (worst)
+      is_disbursed: true when an approved application became a loan
+  fct_loans:
+    description: One row per disbursed loan with repayment performance as of the snapshot date. Use for portfolio, NPL, vintage and revenue questions.
+    columns:
+      loan_status: closed | current | delinquent | npl_90plus
+      current_dpd: days past due of the oldest unpaid overdue installment (0 if none)
+      is_npl90: current_dpd > 90 (the definition of a defaulted / non-performing loan)
+      ever_dpd30: the loan was ever 30+ days late (paid late or still overdue)
+      is_fpd30: first installment was 30+ days late (first-payment default)
+      outstanding_principal: principal not yet repaid
+      revenue_collected: admin_fee + interest + late fees collected so far
+  fct_installments:
+    description: One row per scheduled installment, with status and days past due. Use for roll rates, DPD buckets, collections and vintage curves.
+    columns:
+      status: paid_on_time | paid_late | overdue | not_yet_due
+      dpd: days past due (days paid late, or days overdue as of snapshot)
+      dpd_bucket: "0 | 1-7 | 8-30 | 31-60 | 61-90 | 90+"
+      installment_no: month on book of the loan (1 = first installment)
+  fct_payments:
+    description: One row per cash payment received. Use for cash collections by channel/month.
+
+joins:
+  - fct_loans.customer_id = dim_customers.customer_id
+  - fct_loans.product_id = dim_products.product_id
+  - fct_applications.customer_id = dim_customers.customer_id
+  - fct_applications.product_id = dim_products.product_id
+  - fct_applications.loan_id = fct_loans.loan_id
+  - fct_installments.loan_id = fct_loans.loan_id
+  - fct_installments.customer_id = dim_customers.customer_id
+  - fct_payments.loan_id = fct_loans.loan_id
+
+metrics:
+  approval_rate: AVG((fct_applications.decision = 'approved')::int)
+  disbursed_principal: SUM(fct_loans.principal)
+  npl90_ratio_by_count: AVG(fct_loans.is_npl90::int)
+  npl90_ratio_by_balance: SUM(outstanding_principal) FILTER (WHERE is_npl90) / NULLIF(SUM(outstanding_principal) FILTER (WHERE loan_status <> 'closed'), 0)
+  fpd30_rate: AVG(fct_loans.is_fpd30::int) over loans whose first installment is already due
+  collection_rate: SUM(paid_amount) / NULLIF(SUM(total_due), 0) over installments with due_date <= snapshot date
+  late_payment_rate: AVG((status = 'paid_late')::int) over installments with status IN ('paid_on_time','paid_late')
+
+notes:
+  - 'Each fct_ table has a different grain. Never join two fact tables and then SUM; aggregate each fact in its own CTE first, then join on loan_id or customer_id.'
+  - 'fct_loans, fct_installments and fct_payments already carry customer_id, product_id and (loans/installments) risk_grade and acquisition_channel, so many questions need no join at all.'
+  - 'For customer attributes (city, province, income_band, employment_type) join dim_customers. For product_name join dim_products.'
+  - '"Default" means is_npl90 unless the user says otherwise. Recent loans have had little time to default, so compare vintages only at the same installment_no (month on book).'
+  - 'Vintage / cohort analysis: group by fct_loans.disbursement_month and, if needed, fct_installments.installment_no.'
+  - '"Revenue" means fct_loans.revenue_collected. "Disbursement" means fct_loans.principal.'
+  - 'Dates are DATE type; use date_trunc and the *_month columns for monthly questions. Snapshot date is 2026-09-30, so there is no data after it.'

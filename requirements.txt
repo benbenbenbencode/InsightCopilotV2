@@ -1,0 +1,11 @@
+sqlalchemy>=2.0
+psycopg2-binary
+pandas
+sqlglot>=25
+requests
+pyyaml
+python-dotenv
+fastapi
+uvicorn
+streamlit
+pytest
